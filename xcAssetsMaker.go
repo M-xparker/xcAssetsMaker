@@ -14,7 +14,7 @@ var destination = flag.String("destination", "", "Destination for image assets")
 
 func main() {
 	flag.Parse()
-	out, err := exec.Command("bash", "-c", "/usr/bin/find "+*source+" -name *.png -print").CombinedOutput()
+	out, err := exec.Command("bash", "-c", "/usr/bin/find "+*source+" -name \\*.png -print").CombinedOutput()
 	if err != nil {
 		log.Fatal(err, string(out))
 	}
